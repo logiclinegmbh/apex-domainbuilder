@@ -5,7 +5,12 @@
             "default": true,
             "package": "apex-domainbuilder",
             "versionName": "Summer '20",
-            "versionNumber": "1.2.0.NEXT"
+            "versionNumber": "1.2.2.NEXT",
+            "dependencies": [
+                {
+                    "package": "fflib-apex-common@0.1.2-1"
+                }
+            ]
         }
     ],
     "namespace": "",
@@ -13,6 +18,8 @@
     "sourceApiVersion": "48.0",
     "packageAliases": {
         "apex-domainbuilder": "0Ho4A000000fxSpSAI",
-        "apex-domainbuilder@1.1.0-1": "04t4A000000onRgQAI"
+        "apex-domainbuilder@1.1.0-1": "04t4A000000onRgQAI",
+        "fflib-apex-common": "0Ho2o000000TN4TCAW",
+        "fflib-apex-common@0.1.2-1": "04t2o000001Aw73AAC"
     }
 }

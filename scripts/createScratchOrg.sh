@@ -5,7 +5,7 @@ execute() {
   $@ || exit
 }
 
-if [ -z "$secrets.DEV_HUB_URL" ]; then
+if [ -z "$secrets" ]; then
   echo "set default devhub user"
   execute sfdx force:config:set defaultdevhubusername=$DEV_HUB_ALIAS
 
@@ -16,6 +16,9 @@ fi
 
 echo "Creating scratch ORG"
 execute sfdx force:org:create -a $SCRATCH_ORG_ALIAS -s -f ./config/project-scratch-def.json -d 7
+
+echo "Install dependencies"
+sfdx texei:package:dependencies:install -u $SCRATCH_ORG_ALIAS
 
 echo "Pushing changes to scratch org"
 execute sfdx force:source:push

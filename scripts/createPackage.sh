@@ -5,7 +5,7 @@ execute() {
   $@ || exit
 }
 
-if [ -z "$secrets.DEV_HUB_URL" ]; then
+if [ -z "$secrets" ]; then
   echo "set default devhub user"
   execute sfdx force:config:set defaultdevhubusername=$DEV_HUB_ALIAS
 fi
